@@ -11,6 +11,7 @@
   --grey-icon: #afb1b8;
   --modal-overlay: rgba(0, 0, 0, 0.2);
   --modal-button: rgba(0, 0, 0, 0.1);
+  --animation-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -132,7 +133,7 @@ img {
   border-radius: 2px;
 
   transform: scaleX(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms var(--animation-function);
 }
 
 .pages:hover::after,
@@ -175,7 +176,7 @@ img {
   align-items: center;
 
   text-decoration: none;
-  transition: color 250ms, border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms, border-radius 250ms var(--animation-function);
 }
 
 .contacts:hover,
@@ -201,6 +202,7 @@ img {
 
 .hero-section {
   background-color: var(--brand-color);
+  max-width: 1600px;
   padding: 200px 0;
   text-align: center;
 
@@ -425,8 +427,8 @@ img {
   border-radius: 50%;
   cursor: pointer;
 
-  background-color: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  transition: background-color 250ms var(--animation-function);
 }
 
 .sn-list-icon {
@@ -467,7 +469,7 @@ img {
   border-radius: 4px;
   cursor: pointer;
 
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms var(--animation-function);
 }
 
 .clients-list-item:not(:last-child) {
@@ -478,7 +480,7 @@ img {
   width: 106px;
   height: 60px;
   fill: currentColor;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms var(--animation-function);
 }
 
 .clients-link:hover,
@@ -517,9 +519,9 @@ img {
 
   cursor: pointer;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--animation-function),
+    color 250ms var(--animation-function),
+    box-shadow 250ms var(--animation-function);
 }
 
 /* ТЕКУЩАЯ КНОПКА */
@@ -624,7 +626,7 @@ img {
   background-color: rgba(33, 150, 243, 0.9);
 
   transform: translatey(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms var(--animation-function);
 }
 
 .overlay-about {
@@ -710,7 +712,7 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
 
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--animation-function);
 }
 
 .company-sn-item:not(:last-child) {
@@ -753,7 +755,7 @@ img {
   width: 100%;
   background-color: var(--modal-overlay);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms var(--animation-function);
 }
 
 .backdrop.is-hidden {
@@ -762,7 +764,7 @@ img {
 }
 
 .backdrop.is-hidden.modal {
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
 }
 
 .modal {
@@ -776,8 +778,8 @@ img {
   width: 528px;
   height: 581px;
 
-  transform: translate(-50%, -50%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(-50%);
+  transition: transform 250ms var(--animation-function);
 }
 
 .modal-button {
@@ -792,6 +794,7 @@ img {
   border-radius: 50%;
 
   background-color: var(--white);
+  cursor: pointer;
 }
 
 .close-icon {
